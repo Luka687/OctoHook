@@ -6,9 +6,12 @@ using UnityEngine.UI;
 
 public class Fish : MonoBehaviour
 {
+    private string[] sastojci = new string[] { "cokolada", "pomorandza", "banana", "kiwi", "jagoda" };
     private float waitingTime;
     public Slider waitSlider;
-    public string[] fishOrder= new string[3];
+    public GameObject _goFishOrder;
+    private List<string> fishOrder = new List<string>();
+    private List<GameObject> fishOrderImages = new List<GameObject>();
 
     public async Task WaitForFood(float duration)
     {
@@ -22,10 +25,34 @@ public class Fish : MonoBehaviour
         //I onda ode
         Destroy(this.gameObject);
     }
-
-    public void setFishOrder(string[] order)
+    private void Awake()
     {
-        this.fishOrder = order;
+        foreach(Transform child in _goFishOrder.transform)
+        {
+            fishOrderImages.Add(child.gameObject);
+            child.gameObject.SetActive(false);
+        }
+        generisiReceptZaRibu();
+        showOrder();
     }
+    public void generisiReceptZaRibu()
+    {
+        for (int i = 0; i < Random.Range(1, 4); i++)
+        {
+            fishOrder.Add(sastojci[Random.Range(0, sastojci.Length)]);
+        }
+    }
+
+
+    private void showOrder()
+    {
+        for(int i = 0; i < fishOrder.Count; i++)
+        {
+            fishOrderImages[i].SetActive(true);
+        }
+        
+    }
+
+
 
 }

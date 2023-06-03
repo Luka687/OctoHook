@@ -22,27 +22,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Testiranje
-        //string[] d = new string[] { "vanila", "jagoda" };
-        //listaNarudzbina.Add(d);
-        //generisiRecepte();
-        //generisiRecepte();
-        //listaNarudzbina.Add(d);
-        //foreach (string[] s in listaNarudzbina)
-        //{
-        //    string let = "";
-        //    foreach (string element in s)
-        //    {
-        //        let = let + " " + element;
-
-        //    }
-        //    Debug.Log(let);
-        //}
-        //Debug.Log("/////");
-        //dodajSloj("vanila");
-        //dodajSloj("jagoda");
-        //proveriNarudzbinu();
-        //ukloniIzListe(narudzbinaIndex);
+        
         coroutine = pozivanjeRibe(vremeZaHvatanjeRibe);
         StartCoroutine(coroutine);
 
@@ -56,18 +36,7 @@ public class GameManager : MonoBehaviour
         {
             
             _fishes[i].WaitForFood(Random.Range(20.0f, 35.0f));
-            _fishes[i].setFishOrder(generisiReceptZaRibu());
         }
-    }
-
-    public string[] generisiReceptZaRibu()
-    {
-        string[] recept = new string[3];
-        for (int i = 0; i < Random.Range(1, 4); i++)
-        {
-            recept[i] = sastojci[Random.Range(0, sastojci.Length)];
-        }
-        return recept;
     }
 
     //Ubacivanje narudzbine u listu narudzbina

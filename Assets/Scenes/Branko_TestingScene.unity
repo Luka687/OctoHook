@@ -1213,6 +1213,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4842276287266251955, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
+      propertyPath: fishOrder.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7300740924950875800, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1240,7 +1244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 250165087430606277, guid: 7b5e6ba3f4da3154c933a968da8b5e63, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1368221529284327205, guid: 7b5e6ba3f4da3154c933a968da8b5e63, type: 3}
       propertyPath: m_RootOrder
@@ -1290,13 +1294,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fish
       objectReference: {fileID: 0}
+    - target: {fileID: 2561019105453055113, guid: 7b5e6ba3f4da3154c933a968da8b5e63, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5375498178637034541, guid: 7b5e6ba3f4da3154c933a968da8b5e63, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5375498178637034541, guid: 7b5e6ba3f4da3154c933a968da8b5e63, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5375498178637034541, guid: 7b5e6ba3f4da3154c933a968da8b5e63, type: 3}
       propertyPath: m_AnchorMin.x

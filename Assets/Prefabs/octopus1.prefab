@@ -342,6 +342,8 @@ MonoBehaviour:
   - 
   - 
   - 
+  _goFishOrder: {fileID: 338306000465297039}
+  fishOrderImages: []
 --- !u!1 &1292624100149049842
 GameObject:
   m_ObjectHideFlags: 0
