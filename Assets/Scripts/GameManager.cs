@@ -1,13 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private Fish[] _fishes;
+
     private string[] sastojci = new string[] { "cokolada","vanila","banana","pistaci","jagoda"};
     private List<string[]> listaNarudzbina = new List<string[]>();
     private List<string>narudzbina = new List<string>();
     private int narudzbinaIndex = -1;
+
+
+    private bool pozivanjeRibeUp;
+    private float sliderPozivanjeRibeTime;
+    public Slider pozivanjeRibeSlider;
+    public float vremeZaHvatanjeRibe = 10.0f;
+    private IEnumerator coroutine;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +43,19 @@ public class GameManager : MonoBehaviour
         //dodajSloj("jagoda");
         //proveriNarudzbinu();
         //ukloniIzListe(narudzbinaIndex);
+        coroutine = pozivanjeRibe(vremeZaHvatanjeRibe);
+        StartCoroutine(coroutine);
+
+        BeginFish();
+    }
+
+    public async void BeginFish()
+    {
+        foreach (Fish fish in _fishes)
+        {
+            await fish.WaitForFood(10000.0f);
+            //Random.Range(3000.0f, 6000.0f)
+        }
     }
 
     //Ubacivanje narudzbine u listu narudzbina
@@ -95,15 +118,29 @@ public class GameManager : MonoBehaviour
         narudzbinaIndex = -1;
     }
 
-    //QTE za pozivanje ribe 10 seconds
-    public void pozivanjeRibe()
+    //QTE za pozivanje ribe 10 seconds ili odredjeno vreme
+    public IEnumerator pozivanjeRibe(float odredjenoVremeZaHvatanjeRibe)
     {
-
+        sliderPozivanjeRibeTime = 0;
+        pozivanjeRibeUp = true;
+        yield return new WaitForSeconds(odredjenoVremeZaHvatanjeRibe);
+        Debug.Log("kraj");
+        pozivanjeRibeUp = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (pozivanjeRibeUp)
+        {
+            sliderPozivanjeRibeTime += Time.deltaTime;
+            pozivanjeRibeSlider.value = sliderPozivanjeRibeTime / vremeZaHvatanjeRibe;
+        }
+        if(pozivanjeRibeUp && Input.GetButtonDown("Q"))
+        {
+            Debug.Log("Hooked");
+            StopCoroutine(coroutine);
+            pozivanjeRibeUp = false;
+        }
     }
 }
