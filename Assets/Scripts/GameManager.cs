@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Fish[] _fishes;
 
-    private string[] sastojci = new string[] { "cokolada","vanila","banana","pistaci","jagoda"};
+    private string[] sastojci = new string[] { "cokolada","pomorandza","banana","kiwi","jagoda"};
     private List<string[]> listaNarudzbina = new List<string[]>();
     private List<string>narudzbina = new List<string>();
     private int narudzbinaIndex = -1;
@@ -51,11 +51,23 @@ public class GameManager : MonoBehaviour
 
     public async void BeginFish()
     {
-        foreach (Fish fish in _fishes)
+        
+        for(int i=0;i<_fishes.Length;i++)
         {
-            await fish.WaitForFood(10000.0f);
-            //Random.Range(3000.0f, 6000.0f)
+            
+            _fishes[i].WaitForFood(Random.Range(20.0f, 35.0f));
+            _fishes[i].setFishOrder(generisiReceptZaRibu());
         }
+    }
+
+    public string[] generisiReceptZaRibu()
+    {
+        string[] recept = new string[3];
+        for (int i = 0; i < Random.Range(1, 4); i++)
+        {
+            recept[i] = sastojci[Random.Range(0, sastojci.Length)];
+        }
+        return recept;
     }
 
     //Ubacivanje narudzbine u listu narudzbina

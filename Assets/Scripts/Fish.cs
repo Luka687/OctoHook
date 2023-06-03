@@ -8,17 +8,24 @@ public class Fish : MonoBehaviour
 {
     private float waitingTime;
     public Slider waitSlider;
+    public string[] fishOrder= new string[3];
 
     public async Task WaitForFood(float duration)
     {
-        var start = Time.time+0.01f;
+        var start = Time.time;
         var end = Time.time + duration;
         while (Time.time < end)
         {
-            waitSlider.value = (Time.time-start)/duration;
+            this.waitSlider.value = (Time.time-start)/duration;
             await Task.Yield();
         }
+        //I onda ode
+        Destroy(this.gameObject);
     }
 
-    
+    public void setFishOrder(string[] order)
+    {
+        this.fishOrder = order;
+    }
+
 }
