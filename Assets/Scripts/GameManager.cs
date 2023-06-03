@@ -11,12 +11,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         generisiRecepte();
+        generisiRecepte();
+        generisiRecepte();
         foreach (string[] s in narudzbina)
         {
+            string let = "";
             foreach (string element in s)
             {
-                Debug.Log(element);
+                let = let +" "+ element;
+                
             }
+            Debug.Log(let);
         }
         
     }
