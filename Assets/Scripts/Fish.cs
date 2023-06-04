@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class Fish : MonoBehaviour
 {
-    private string[] sastojci = new string[] { "cokolada", "borovnica", "banana", "kiwi", "jagoda" };
-    private List<string> sastojciList = new List<string> { "cokolada", "borovnica", "banana", "kiwi", "jagoda" };
+    private string[] sastojci = new string[] { "Cokolada", "Borovnica", "Banana", "Kiwi", "Jagoda" };
+    private List<string> sastojciList = new List<string> { "Cokolada", "Borovnica", "Banana", "Kiwi", "Jagoda" };
     public List<Sprite> cakeSprites = new List<Sprite>();
     private float waitingTime;
     public Slider waitSlider;
@@ -66,6 +66,27 @@ public class Fish : MonoBehaviour
     private void Update()
     {
         transform.position = Vector2.Lerp(transform.position, target, Time.deltaTime);
+    }
+
+    public void compareOrder(List<string> order)
+    {
+        bool provera = true;
+        for(int i = 0; i < fishOrder.Count; i++)
+        {
+            Debug.Log("Octopus order:" + order[i] + " fish order:" + fishOrder[i]);
+            if (order[i] != fishOrder[i])
+            {
+                provera = false;
+                break;
+            }
+        }
+        if (provera)
+        {
+            //FISH SATISFIED
+        }else{
+            //FISH DISSATISFIED
+            Debug.Log("you suck");
+        }
     }
 
 }

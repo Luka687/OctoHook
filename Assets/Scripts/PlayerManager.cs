@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject _goFishOrder;
     private List<GameObject> fishOrderImages = new List<GameObject>();
     private int brojSlojeva = 0;
+    private GameObject selectedFish;
 
     private void Start()
     {
@@ -68,6 +69,11 @@ public class PlayerManager : MonoBehaviour
                     togglePlate(false);
                     recycle();
                     break;
+                case "Riba":
+                    selectedFish.GetComponent<Fish>().compareOrder(fishOrder);
+                    togglePlate(false);
+                    recycle();
+                    break;
                 default:
                     break;
             }
@@ -86,7 +92,6 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        //Debug.Log(collision.gameObject.name + " : " + gameObject.name + " : " + Time.time);
         if (collision.tag.Equals("Plate"))
         {
             state = "Plate";
@@ -115,14 +120,19 @@ public class PlayerManager : MonoBehaviour
         {
             state = "Banana";
         }
+        if (collision.tag.Equals("Riba"))
+        {
+            state = "Riba";
+            selectedFish = collision.transform.parent.gameObject;
+        }
 
         entered = true;
     }
 
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    entered = false;
-    //}
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        entered = false;
+    }
 
     public void togglePlate(bool boolVar)
     {
