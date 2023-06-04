@@ -3,25 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Plate
-  - Recycle
-  - Banana
-  - Jagoda
-  - Kiwi
-  - Cokolada
-  - Borovnica
-  - LastTag
-<<<<<<< Updated upstream
-  - Riba
-=======
-  - Wall
->>>>>>> Stashed changes
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Wall
+  - 
   - Water
   - UI
   - 

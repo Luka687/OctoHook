@@ -14,7 +14,12 @@ public class Fish : MonoBehaviour
     public GameObject _goFishOrder;
     public List<string> fishOrder = new List<string>();
     private List<GameObject> fishOrderImages = new List<GameObject>();
+<<<<<<< Updated upstream
     private GameManager _gm;
+=======
+    private PlayerManager pm = new PlayerManager();
+    private ScoreCount sc = new ScoreCount();
+>>>>>>> Stashed changes
 
     public async Task WaitForFood(float duration)
     {
@@ -90,9 +95,11 @@ public class Fish : MonoBehaviour
         }
         if (provera)
         {
-            //FISH SATISFIED dodajBodove()
+            pm.score += 100;
+            sc.setScore(100);
         }else{
-            //FISH DISSATISFIED
+            pm.score -= 100;
+            sc.setScore(-100);
             Debug.Log("you suck");
         }
     }
