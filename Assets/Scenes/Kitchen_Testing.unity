@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17998004, g: 0.22534645, b: 0.30672887, a: 1}
+  m_IndirectSpecularColor: {r: 0.17998028, g: 0.22534679, b: 0.30672953, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2653,22 +2653,6 @@ PrefabInstance:
       propertyPath: spawnLocationsParent
       value: 
       objectReference: {fileID: 1702081540}
-    - target: {fileID: 2997880219199944356, guid: b7bb4b14dc562ab46bf2be5ae86c9e20, type: 3}
-      propertyPath: _fishes.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2997880219199944356, guid: b7bb4b14dc562ab46bf2be5ae86c9e20, type: 3}
-      propertyPath: _fishes.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2997880219199944356, guid: b7bb4b14dc562ab46bf2be5ae86c9e20, type: 3}
-      propertyPath: _fishes.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2997880219199944356, guid: b7bb4b14dc562ab46bf2be5ae86c9e20, type: 3}
-      propertyPath: _fishes.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2997880219199944357, guid: b7bb4b14dc562ab46bf2be5ae86c9e20, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -2716,22 +2700,6 @@ PrefabInstance:
     - target: {fileID: 2997880219199944359, guid: b7bb4b14dc562ab46bf2be5ae86c9e20, type: 3}
       propertyPath: m_Name
       value: GameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 2997880220051424123, guid: b7bb4b14dc562ab46bf2be5ae86c9e20, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2997880220104109460, guid: b7bb4b14dc562ab46bf2be5ae86c9e20, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2997880220740010106, guid: b7bb4b14dc562ab46bf2be5ae86c9e20, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 2997880220740010106, guid: b7bb4b14dc562ab46bf2be5ae86c9e20, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 83
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7bb4b14dc562ab46bf2be5ae86c9e20, type: 3}
@@ -16003,6 +15971,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889133740}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1893491435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2997880219199944359, guid: b7bb4b14dc562ab46bf2be5ae86c9e20, type: 3}
+  m_PrefabInstance: {fileID: 224866889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1893491438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893491435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5457596c9450b364d89c0e8765638cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1908042614
 GameObject:
   m_ObjectHideFlags: 0

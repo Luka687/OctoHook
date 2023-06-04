@@ -27,11 +27,14 @@ public class Fish : MonoBehaviour
         }
         //I onda ode
         oslobodiMesto();
+        _gm.AddScore(-50);
         Destroy(this.gameObject);
     }
     public void oslobodiMesto()
     {
         _gm.oslobodiSpawnMesto(this.transform.parent.gameObject);
+
+        Destroy(this.gameObject);
     }
 
     private void Awake()
@@ -91,8 +94,11 @@ public class Fish : MonoBehaviour
         if (provera)
         {
             //FISH SATISFIED dodajBodove()
-        }else{
-            //FISH DISSATISFIED
+            _gm.AddScore(+100);
+            oslobodiMesto();
+        }
+        else{
+            _gm.AddScore(-25);
             Debug.Log("you suck");
         }
     }

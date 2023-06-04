@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 using System.Threading.Tasks;
 
@@ -27,12 +28,20 @@ public class GameManager : MonoBehaviour
     private bool[] listaAktivnihLokacija = new bool[] { false,false,false};
     private int mesto = -1;
    
-    public float spawnInterval=10;
+    public float spawnInterval=8;
     private int spawnCounter = 3;
+    private int score=0;
+    public TMP_Text ScoreText;
+    public TMP_Text TimeText;
+    private float vreme;
+
+    public bool timerIsRunning = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        timerIsRunning = true;
         foreach (Transform child in spawnLocationsParent.transform)
         {
             listaSpawnLokacija.Add(child.gameObject);
@@ -53,7 +62,7 @@ public class GameManager : MonoBehaviour
             listaAktivnihLokacija[mesto] = true;
             GameObject riba = Instantiate(listaRibaZaInstanciranje[Random.Range(0, listaRibaZaInstanciranje.Count)], lokacija.transform);
             _fishes.Add(riba);
-            riba.GetComponent<Fish>().WaitForFood(Random.Range(20.0f, 35.0f));
+            riba.GetComponent<Fish>().WaitForFood(Random.Range(15.0f, 20.0f));
             riba.GetComponent<Fish>().addTarget(riba.transform);
             await WaitForNext(spawnInterval);
             makeFish();
@@ -118,6 +127,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
+    public float timeRemaining = 120;
     void Update()
     {
         if (pozivanjeRibeUp)
@@ -131,6 +141,40 @@ public class GameManager : MonoBehaviour
             StopCoroutine(coroutine);
             pozivanjeRibeUp = false;
         }
+        if (timerIsRunning)
+        {
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+                DisplayTime(timeRemaining);
+            }
+            else
+            {
+                Debug.Log("Time has run out!");
+                timeRemaining = 0;
+                timerIsRunning = false;
+                this.gameObject.GetComponent<SceneChanger>().Scene2();
+            }
+        }
+
+        if (score < 0)
+        {
+            this.gameObject.GetComponent<SceneChanger>().Scene2();
+        }
+    }
+
+    void DisplayTime(float timeToDisplay)
+    {
+        timeToDisplay += 1;
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        TimeText.text = string.Format("Time: {0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void AddScore(int i)
+    {
+        score += i;
+        ScoreText.text ="High Score: " + score.ToString();
     }
 
     
