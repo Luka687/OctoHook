@@ -17,7 +17,6 @@ public class PlayerManager : MonoBehaviour
     private List<GameObject> fishOrderImages = new List<GameObject>();
     private int brojSlojeva = 0;
     private GameObject selectedFish;
-    public float score = 0;
 
     private void Start()
     {

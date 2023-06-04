@@ -6,9 +6,8 @@ public class SceneChanger: MonoBehaviour {
     public void Scene1() {  
         SceneManager.LoadScene("Kitchen_Testing");  
     }
-
     public void Scene2()
     {
-        SceneManager.LoadScene("main_menu");
+        SceneManager.LoadScene("Main_Menu");
     }
 } 
