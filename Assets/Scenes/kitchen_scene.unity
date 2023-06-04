@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17998022, g: 0.22534655, b: 0.30672908, a: 1}
+  m_IndirectSpecularColor: {r: 0.17998028, g: 0.22534679, b: 0.30672953, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -221,37 +221,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9303576}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &14627075 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1099873663421792454, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
-  m_PrefabInstance: {fileID: 1099873663132916080}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &14627081
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14627075}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.59}
-    newSize: {x: 0.64, y: 0.59}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.59}
-  m_EdgeRadius: 0
 --- !u!1 &29663904
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,7 +1115,7 @@ GameObject:
   - component: {fileID: 136131286}
   m_Layer: 0
   m_Name: KiwiCollider
-  m_TagString: Untagged
+  m_TagString: Kiwi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1159,7 +1128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136131284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 56.5, y: -48, z: 0}
+  m_LocalPosition: {x: 56.5, y: -51.3, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1176,7 +1145,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1792,7 +1761,7 @@ GameObject:
   - component: {fileID: 207363238}
   m_Layer: 0
   m_Name: BlueberryCollider
-  m_TagString: Untagged
+  m_TagString: Borovnica
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1805,7 +1774,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207363236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.1, y: -23.3, z: 0}
+  m_LocalPosition: {x: 36.1, y: -20.7, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1822,7 +1791,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -4644,7 +4613,7 @@ GameObject:
   - component: {fileID: 631523855}
   m_Layer: 0
   m_Name: RecycleCollider
-  m_TagString: Untagged
+  m_TagString: Recycle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4657,7 +4626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631523853}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.7, y: -48, z: 0}
+  m_LocalPosition: {x: 75.7, y: -53.6, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4674,7 +4643,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -9904,7 +9873,7 @@ GameObject:
   - component: {fileID: 1287129348}
   m_Layer: 0
   m_Name: PlateCollider
-  m_TagString: Untagged
+  m_TagString: Plate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9917,7 +9886,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287129346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.1, y: -23.3, z: 0}
+  m_LocalPosition: {x: 55.7, y: -18.3, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9934,7 +9903,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -11760,7 +11729,7 @@ GameObject:
   - component: {fileID: 1566887000}
   m_Layer: 0
   m_Name: StrawberryCollider
-  m_TagString: Untagged
+  m_TagString: Jagoda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11773,7 +11742,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566886998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.7, y: -48, z: 0}
+  m_LocalPosition: {x: 36.7, y: -52.6, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11790,7 +11759,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -12683,7 +12652,7 @@ GameObject:
   - component: {fileID: 1693469139}
   m_Layer: 0
   m_Name: BananaCollider
-  m_TagString: Untagged
+  m_TagString: Banana
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12696,7 +12665,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693469137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.8, y: -48, z: 0}
+  m_LocalPosition: {x: 14.8, y: -52, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12713,7 +12682,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -13504,11 +13473,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798387177}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1820079578 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 260254987043682209, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
-  m_PrefabInstance: {fileID: 1099873663132916080}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1876948403
 GameObject:
   m_ObjectHideFlags: 0
@@ -13619,7 +13583,7 @@ GameObject:
   - component: {fileID: 1885389843}
   m_Layer: 0
   m_Name: ChocolateCollider
-  m_TagString: Untagged
+  m_TagString: Cokolada
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13632,7 +13596,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885389841}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.8, y: -23.3, z: 0}
+  m_LocalPosition: {x: 14.8, y: -20.3, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13649,7 +13613,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -15241,11 +15205,35 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 14627080, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
-      propertyPath: _goPlate
+      propertyPath: cakeSprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 14627080, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
+      propertyPath: cakeSprites.Array.data[0]
       value: 
-      objectReference: {fileID: 1820079578}
-    - target: {fileID: 260254987043682209, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
-      propertyPath: m_IsActive
+      objectReference: {fileID: 21300000, guid: efc391ce519a09447b5a70ffaa70fba6, type: 3}
+    - target: {fileID: 14627080, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
+      propertyPath: cakeSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5cd5f39e973682245a5a572007f18259, type: 3}
+    - target: {fileID: 14627080, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
+      propertyPath: cakeSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 71c6cf89de5fe394eafc829e12785518, type: 3}
+    - target: {fileID: 14627080, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
+      propertyPath: cakeSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 24b12c2f1708fb047890780fc474a1f2, type: 3}
+    - target: {fileID: 14627080, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
+      propertyPath: cakeSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 32f11c5bd0f0be642834f0062d9bd181, type: 3}
+    - target: {fileID: 14627088, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 14627088, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
+      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1099873663421792454, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
@@ -15294,6 +15282,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1099873663421792457, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420942590953167043, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914711187572785137, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7989742044297116192, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

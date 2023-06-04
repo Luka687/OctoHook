@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Plate
+  - Recycle
+  - Banana
+  - Jagoda
+  - Kiwi
+  - Cokolada
+  - Borovnica
   layers:
   - Default
   - TransparentFX
