@@ -221,6 +221,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9303576}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &23719875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6608728626059242802, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
+  m_PrefabInstance: {fileID: 1099873663132916080}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &29663904
 GameObject:
   m_ObjectHideFlags: 0
@@ -15205,6 +15210,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 14627080, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
+      propertyPath: _goFishOrder
+      value: 
+      objectReference: {fileID: 23719875}
+    - target: {fileID: 14627080, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
       propertyPath: cakeSprites.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -15286,15 +15295,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5420942590953167043, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5914711187572785137, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7989742044297116192, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dbf2bb415684314393fbb1a20310b22, type: 3}

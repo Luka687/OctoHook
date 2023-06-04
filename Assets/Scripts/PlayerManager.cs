@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerManager : MonoBehaviour
     public List<string> fishOrder = new List<string>();
     public GameObject _goFishOrder;
     private List<GameObject> fishOrderImages = new List<GameObject>();
+    private int brojSlojeva = 0;
 
     private void Start()
     {
@@ -48,22 +50,23 @@ public class PlayerManager : MonoBehaviour
                     togglePlate(true);
                     break;
                 case "Banana":
-                    togglePlate(true);
+                    dodajSloj(0, "Banana");
                     break;
                 case "Kiwi":
-                    togglePlate(true);
+                    dodajSloj(1, "Kiwi");
                     break;
                 case "Jagoda":
-                    togglePlate(true);
+                    dodajSloj(3, "Jagoda");
                     break;
                 case "Cokolada":
-                    togglePlate(true);
+                    dodajSloj(4, "Cokolada");
                     break;
                 case "Borovnica":
-                    togglePlate(true);
+                    dodajSloj(2, "Borovnica");
                     break;
                 case "Recycle":
                     togglePlate(false);
+                    recycle();
                     break;
                 default:
                     break;
@@ -71,7 +74,17 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void recycle()
+    {
+        fishOrder.Clear();
+        brojSlojeva = 0;
+        foreach(GameObject go in fishOrderImages)
+        {
+            go.SetActive(false);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
         //Debug.Log(collision.gameObject.name + " : " + gameObject.name + " : " + Time.time);
         if (collision.tag.Equals("Plate"))
@@ -106,10 +119,10 @@ public class PlayerManager : MonoBehaviour
         entered = true;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        entered = false;
-    }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    entered = false;
+    //}
 
     public void togglePlate(bool boolVar)
     {
@@ -117,4 +130,16 @@ public class PlayerManager : MonoBehaviour
         _goPlate.SetActive(plateCollected);
         
     }
+
+    public void dodajSloj(int brojSprite, string s)
+    {
+        if (brojSlojeva < 3 && plateCollected)
+        {
+            fishOrder.Add(s);
+            fishOrderImages[brojSlojeva].SetActive(true);
+            fishOrderImages[brojSlojeva].GetComponent<Image>().sprite = cakeSprites[brojSprite];
+            brojSlojeva++;
+        }
+    }
+
 }
