@@ -6,11 +6,13 @@ using UnityEngine.UI;
 
 public class Fish : MonoBehaviour
 {
-    private string[] sastojci = new string[] { "cokolada", "pomorandza", "banana", "kiwi", "jagoda" };
+    private string[] sastojci = new string[] { "cokolada", "borovnica", "banana", "kiwi", "jagoda" };
+    private List<string> sastojciList = new List<string> { "cokolada", "borovnica", "banana", "kiwi", "jagoda" };
+    public List<Sprite> cakeSprites = new List<Sprite>();
     private float waitingTime;
     public Slider waitSlider;
     public GameObject _goFishOrder;
-    private List<string> fishOrder = new List<string>();
+    public List<string> fishOrder = new List<string>();
     private List<GameObject> fishOrderImages = new List<GameObject>();
 
     public async Task WaitForFood(float duration)
@@ -49,6 +51,8 @@ public class Fish : MonoBehaviour
         for(int i = 0; i < fishOrder.Count; i++)
         {
             fishOrderImages[i].SetActive(true);
+            fishOrderImages[i].GetComponent<Image>().sprite =cakeSprites[sastojciList.IndexOf(fishOrder[i])];
+            
         }
         
     }
