@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using System.Threading.Tasks;
+
 public class GameManager : MonoBehaviour
 {
     private List<GameObject> _fishes = new List<GameObject>();
@@ -22,6 +24,9 @@ public class GameManager : MonoBehaviour
     public List<GameObject> listaRibaZaInstanciranje = new List<GameObject>();
     public GameObject spawnLocationsParent;
     private List<GameObject> listaSpawnLokacija = new List<GameObject>();
+    private bool[] listaAktivnihLokacija = new bool[] { false,false,false};
+    private int mesto = -1;
+   
     public float spawnInterval=10;
     private int spawnCounter = 3;
 
@@ -39,92 +44,49 @@ public class GameManager : MonoBehaviour
         //BeginFish();
     }
 
-    public void makeFish()
+    public async void makeFish()
     {
-        if (spawnCounter > 0)
+        if (spawnCounter > 0 && checkIfSpawnAvailable())
         {
             spawnCounter--;
-            var lokacija = listaSpawnLokacija[Random.Range(0, listaSpawnLokacija.Count)];
+            var lokacija = listaSpawnLokacija[mesto];
+            listaAktivnihLokacija[mesto] = true;
             GameObject riba = Instantiate(listaRibaZaInstanciranje[Random.Range(0, listaRibaZaInstanciranje.Count)], lokacija.transform);
             _fishes.Add(riba);
             riba.GetComponent<Fish>().WaitForFood(Random.Range(20.0f, 35.0f));
             riba.GetComponent<Fish>().addTarget(riba.transform);
-
+            await WaitForNext(spawnInterval);
+            makeFish();
         }
     }
 
-    public async void BeginFish()
+    public bool checkIfSpawnAvailable()
     {
-        
-        //for(int i=0;i<_fishes.Length;i++)
-        //{
-            
-        //   // _fishes[i].WaitForFood
-        //}
+        bool provera = false;
+        for (int i = 0; i < listaAktivnihLokacija.Length; i++)
+        {
+            if (listaAktivnihLokacija[i] != true)
+            {
+                provera = true;
+                mesto = i;
+            }
+        }
+        return provera;
     }
 
-    //Ubacivanje narudzbine u listu narudzbina
-    //public void generisiRecepte()
-    //{
-    //    string[] recept = new string[3];
-    //    for (int i = 0; i < Random.Range(1,4); i++)
-    //    {
-    //        recept[i] = sastojci[Random.Range(0, sastojci.Length)];
-    //    }
+    public async Task WaitForNext(float spawnInterval)
+    {
 
-    //    listaNarudzbina.Add(recept);
-    //}
+        var end = Time.time + spawnInterval;
+        while (Time.time < end)
+        {
+            await Task.Yield();
+        }
+    }
 
-    //igrac dodaje sloj torte
-    //public void dodajSloj(string sloj)
-    //{
-    //    narudzbina.Add(sloj);
-    //}
 
-    //provera da li je igrac napravio dobru porudzbinu
-    //public void proveriNarudzbinu()
-    //{
-    //    bool flag=false;
-    //    string[] provera = new string[3];
-    //    for(int i = 0; i < narudzbina.Count; i++)
-    //    {
-    //        provera[i] = narudzbina[i];
-    //    }
-    //    foreach(string[] niz in listaNarudzbina)
-    //    {
-            
-    //        for(int i = 0; i < niz.Length; i++)
-    //        {
-    //            if(flag)
-    //            {
-    //                break;
-    //            }
-    //            if (niz[i] != provera[i])
-    //            {
-    //                //Debug.Log("nisu isti"+" "+niz[i]+" "+listaNarudzbina.IndexOf(niz));
-    //                flag = true;
-    //            }
-    //        }
-    //        //ako je tacan recept
-    //        if (!flag)
-    //        {
-    //            narudzbinaIndex = listaNarudzbina.IndexOf(niz);
-    //            break;
-    //        }
-    //        flag = false;
-    //    }
-    //    //Debug.Log(narudzbinaIndex);
-    //}
-
-    ////uklanjanje porudzbine iz liste
-    //public void ukloniIzListe(int elListe)
-    //{
-    //    listaNarudzbina.Remove(listaNarudzbina[elListe]);
-    //    narudzbinaIndex = -1;
-    //}
-
-    //QTE za pozivanje ribe 10 seconds ili odredjeno vreme
-    public IEnumerator pozivanjeRibe(float odredjenoVremeZaHvatanjeRibe)
+        //QTE za pozivanje ribe 10 seconds ili odredjeno vreme
+        public IEnumerator pozivanjeRibe(float odredjenoVremeZaHvatanjeRibe)
     {
         sliderPozivanjeRibeTime = 0;
         pozivanjeRibeUp = true;

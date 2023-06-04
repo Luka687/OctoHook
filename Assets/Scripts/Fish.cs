@@ -82,7 +82,7 @@ public class Fish : MonoBehaviour
         }
         if (provera)
         {
-            //FISH SATISFIED
+            //FISH SATISFIED dodajBodove()
         }else{
             //FISH DISSATISFIED
             Debug.Log("you suck");
