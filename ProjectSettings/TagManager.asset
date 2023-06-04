@@ -11,6 +11,7 @@ TagManager:
   - Kiwi
   - Cokolada
   - Borovnica
+  - LastTag
   layers:
   - Default
   - TransparentFX
