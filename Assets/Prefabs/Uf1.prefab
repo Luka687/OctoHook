@@ -112,7 +112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.3, y: 0}
+  m_AnchoredPosition: {x: -13, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3245824990478212809
@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 3755184768798781576}
   - component: {fileID: 3755184768798781591}
   - component: {fileID: 3755184768798781590}
+  - component: {fileID: 489819709}
   m_Layer: 0
   m_Name: Uf1
   m_TagString: Untagged
@@ -389,6 +390,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &489819709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3755184768798781589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16d5e1b3525889c41a93a475ce6e9ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cakeSprites:
+  - {fileID: 21300000, guid: 32f11c5bd0f0be642834f0062d9bd181, type: 3}
+  - {fileID: 21300000, guid: 71c6cf89de5fe394eafc829e12785518, type: 3}
+  - {fileID: 21300000, guid: efc391ce519a09447b5a70ffaa70fba6, type: 3}
+  - {fileID: 21300000, guid: 5cd5f39e973682245a5a572007f18259, type: 3}
+  - {fileID: 21300000, guid: 24b12c2f1708fb047890780fc474a1f2, type: 3}
+  waitSlider: {fileID: 2826996363029359694}
+  _goFishOrder: {fileID: 1657665970235734772}
+  fishOrder: []
 --- !u!1 &3773923653201225465
 GameObject:
   m_ObjectHideFlags: 0
