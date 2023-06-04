@@ -58,6 +58,11 @@ public class GameManager : MonoBehaviour
             await WaitForNext(spawnInterval);
             makeFish();
         }
+        else
+        {
+            await PauseForMoment(2.0f);
+            makeFish();
+        }
     }
 
     public bool checkIfSpawnAvailable()
@@ -74,6 +79,13 @@ public class GameManager : MonoBehaviour
         return provera;
     }
 
+    public void oslobodiSpawnMesto(GameObject go)
+    {
+        spawnCounter++;
+        Debug.Log("Radi kujo " + listaSpawnLokacija.IndexOf(go));
+        listaAktivnihLokacija[listaSpawnLokacija.IndexOf(go)] = false;
+    }
+
     public async Task WaitForNext(float spawnInterval)
     {
 
@@ -84,9 +96,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public async Task PauseForMoment(float spawnInterval)
+    {
 
-        //QTE za pozivanje ribe 10 seconds ili odredjeno vreme
-        public IEnumerator pozivanjeRibe(float odredjenoVremeZaHvatanjeRibe)
+        var end = Time.time + spawnInterval;
+        while (Time.time < end)
+        {
+            await Task.Yield();
+        }
+    }
+
+
+    //QTE za pozivanje ribe 10 seconds ili odredjeno vreme
+    public IEnumerator pozivanjeRibe(float odredjenoVremeZaHvatanjeRibe)
     {
         sliderPozivanjeRibeTime = 0;
         pozivanjeRibeUp = true;

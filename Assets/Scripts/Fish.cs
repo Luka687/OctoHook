@@ -14,6 +14,7 @@ public class Fish : MonoBehaviour
     public GameObject _goFishOrder;
     public List<string> fishOrder = new List<string>();
     private List<GameObject> fishOrderImages = new List<GameObject>();
+    private GameManager _gm;
 
     public async Task WaitForFood(float duration)
     {
@@ -25,8 +26,14 @@ public class Fish : MonoBehaviour
             await Task.Yield();
         }
         //I onda ode
+        oslobodiMesto();
         Destroy(this.gameObject);
     }
+    public void oslobodiMesto()
+    {
+        _gm.oslobodiSpawnMesto(this.transform.parent.gameObject);
+    }
+
     private void Awake()
     {
         foreach(Transform child in _goFishOrder.transform)
@@ -36,6 +43,7 @@ public class Fish : MonoBehaviour
         }
         generisiReceptZaRibu();
         showOrder();
+        _gm = FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
     public void generisiReceptZaRibu()
     {
