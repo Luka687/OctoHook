@@ -12,12 +12,16 @@ TagManager:
   - Cokolada
   - Borovnica
   - LastTag
+<<<<<<< Updated upstream
   - Riba
+=======
+  - Wall
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wall
   - Water
   - UI
   - 
