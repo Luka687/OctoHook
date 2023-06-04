@@ -48,6 +48,8 @@ MonoBehaviour:
   _fishes:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   pozivanjeRibeSlider: {fileID: 2997880220740010107}
   vremeZaHvatanjeRibe: 10
 --- !u!1 &2997880219259167402

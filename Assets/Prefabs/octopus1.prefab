@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1099873663421792457}
   - component: {fileID: 1099873663421792456}
   - component: {fileID: 1099873663421792455}
+  - component: {fileID: 14627080}
   m_Layer: 0
   m_Name: octopus1
   m_TagString: Untagged
@@ -106,3 +107,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &14627080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099873663421792454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc9f4c64d232d1a4eb78106a28275aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
