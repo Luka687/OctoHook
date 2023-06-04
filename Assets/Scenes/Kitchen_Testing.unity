@@ -2649,6 +2649,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 440751343, guid: b7bb4b14dc562ab46bf2be5ae86c9e20, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 440751343, guid: b7bb4b14dc562ab46bf2be5ae86c9e20, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -25
+      objectReference: {fileID: 0}
     - target: {fileID: 2997880219199944356, guid: b7bb4b14dc562ab46bf2be5ae86c9e20, type: 3}
       propertyPath: spawnLocationsParent
       value: 
@@ -10416,7 +10424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1144268270
 Transform:
   m_ObjectHideFlags: 0
@@ -11490,7 +11498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1280323953
 Transform:
   m_ObjectHideFlags: 0

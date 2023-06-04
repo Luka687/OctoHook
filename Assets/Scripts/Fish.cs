@@ -81,8 +81,9 @@ public class Fish : MonoBehaviour
 
     public void compareOrder(List<string> order)
     {
+
         bool provera = true;
-        for(int i = 0; i < fishOrder.Count; i++)
+        for(int i = 0; i < order.Count; i++)
         {
             Debug.Log("Octopus order:" + order[i] + " fish order:" + fishOrder[i]);
             if (order[i] != fishOrder[i])
