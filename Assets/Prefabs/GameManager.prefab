@@ -47,11 +47,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fishes:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   pozivanjeRibeSlider: {fileID: 2997880220740010107}
   vremeZaHvatanjeRibe: 10
+  listaRibaZaInstanciranje:
+  - {fileID: 6070884520523440785, guid: 058e0c0e567ccd94480c172a724a1aac, type: 3}
+  - {fileID: 1138979992054815717, guid: f5e80c2e67a6cf44fb7b4bf98da694a1, type: 3}
+  - {fileID: 8517123337470410263, guid: a6234b456a49be345b2a7df5f6cc1337, type: 3}
+  - {fileID: 3755184768798781589, guid: 7487e56720c4d6e49b0f9f1ea9f468ea, type: 3}
 --- !u!1 &2997880219259167402
 GameObject:
   m_ObjectHideFlags: 0

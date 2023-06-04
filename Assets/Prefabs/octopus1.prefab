@@ -105,7 +105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099873663421792454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.4, y: -61.7, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 27, y: 27, z: 27}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -199,6 +199,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _goPlate: {fileID: 260254987043682209}
+  cakeSprites:
+  - {fileID: 21300000, guid: efc391ce519a09447b5a70ffaa70fba6, type: 3}
+  - {fileID: 21300000, guid: 5cd5f39e973682245a5a572007f18259, type: 3}
+  - {fileID: 21300000, guid: 71c6cf89de5fe394eafc829e12785518, type: 3}
+  - {fileID: 21300000, guid: 24b12c2f1708fb047890780fc474a1f2, type: 3}
+  - {fileID: 21300000, guid: 32f11c5bd0f0be642834f0062d9bd181, type: 3}
+  fishOrder: []
+  _goFishOrder: {fileID: 6608728626059242802}
 --- !u!61 &14627081
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -234,13 +242,13 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099873663421792454}
   m_BodyType: 0
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

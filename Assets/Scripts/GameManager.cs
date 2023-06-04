@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private Fish[] _fishes;
+    private List<GameObject> _fishes = new List<GameObject>();
 
     //private string[] sastojci = new string[] { "cokolada","pomorandza","banana","kiwi","jagoda"};
     //private List<string[]> listaNarudzbina = new List<string[]>();
@@ -19,24 +19,48 @@ public class GameManager : MonoBehaviour
     public float vremeZaHvatanjeRibe = 10.0f;
     private IEnumerator coroutine;
 
+    public List<GameObject> listaRibaZaInstanciranje = new List<GameObject>();
+    public GameObject spawnLocationsParent;
+    private List<GameObject> listaSpawnLokacija = new List<GameObject>();
+    public float spawnInterval=10;
+    private int spawnCounter = 3;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-        coroutine = pozivanjeRibe(vremeZaHvatanjeRibe);
-        StartCoroutine(coroutine);
+        foreach (Transform child in spawnLocationsParent.transform)
+        {
+            listaSpawnLokacija.Add(child.gameObject);
+        }
+        //coroutine = pozivanjeRibe(vremeZaHvatanjeRibe);
+        //StartCoroutine(coroutine);
 
-        BeginFish();
+        makeFish();
+        //BeginFish();
+    }
+
+    public void makeFish()
+    {
+        if (spawnCounter > 0)
+        {
+            spawnCounter--;
+            var lokacija = listaSpawnLokacija[Random.Range(0, listaSpawnLokacija.Count)];
+            GameObject riba = Instantiate(listaRibaZaInstanciranje[Random.Range(0, listaRibaZaInstanciranje.Count)], lokacija.transform);
+            _fishes.Add(riba);
+            riba.GetComponent<Fish>().WaitForFood(Random.Range(20.0f, 35.0f));
+            riba.GetComponent<Fish>().addTarget(riba.transform);
+
+        }
     }
 
     public async void BeginFish()
     {
         
-        for(int i=0;i<_fishes.Length;i++)
-        {
+        //for(int i=0;i<_fishes.Length;i++)
+        //{
             
-            _fishes[i].WaitForFood(Random.Range(20.0f, 35.0f));
-        }
+        //   // _fishes[i].WaitForFood
+        //}
     }
 
     //Ubacivanje narudzbine u listu narudzbina

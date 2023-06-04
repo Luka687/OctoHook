@@ -57,6 +57,15 @@ public class Fish : MonoBehaviour
         
     }
 
-
+    
+    private Vector2 target;
+    public void addTarget(Transform vec)
+    {
+        target = new Vector2(vec.position.x - 55.0f, vec.position.y);
+    }
+    private void Update()
+    {
+        transform.position = Vector2.Lerp(transform.position, target, Time.deltaTime);
+    }
 
 }
